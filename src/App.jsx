@@ -153,7 +153,20 @@ function ChooseWorldSection() {
   );
 }
 
-
+function UniquelyBottledSection() {
+  const bottleImages = [img7];
+  return (
+    <section className="uniquely">
+      <div className="uniquely__scattered">
+        {bottleImages.slice(0, 6).map((img, i) => (
+          <div key={i} className={`uniquely__bottle uniquely__bottle--left-${i + 1}`}>
+            <img src={img} alt="bottle" />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
@@ -322,6 +335,7 @@ function App() {
       </section>
 
       <ChooseWorldSection />
+      <UniquelyBottledSection />
       <TestimonialsSection />
       <FaqSection />
       <Footer />
